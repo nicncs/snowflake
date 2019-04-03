@@ -73,24 +73,24 @@ const emptyState = (): SnowflakeAppState => {
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
+    name: '{Your Name Here}',
     title: 'Staff Engineer',
     milestoneByTrack: {
-      'MOBILE': 1,
-      'WEB_CLIENT': 2,
-      'FOUNDATIONS': 3,
-      'SERVERS': 2,
-      'PROJECT_MANAGEMENT': 4,
-      'COMMUNICATION': 1,
-      'CRAFT': 1,
-      'INITIATIVE': 4,
-      'CAREER_DEVELOPMENT': 3,
-      'ORG_DESIGN': 2,
+      'MOBILE': 0,
+      'WEB_CLIENT': 0,
+      'FOUNDATIONS': 0,
+      'SERVERS': 0,
+      'PROJECT_MANAGEMENT': 0,
+      'COMMUNICATION': 0,
+      'CRAFT': 0,
+      'INITIATIVE': 0,
+      'CAREER_DEVELOPMENT': 0,
+      'ORG_DESIGN': 0,
       'WELLBEING': 0,
-      'ACCOMPLISHMENT': 4,
-      'MENTORSHIP': 2,
-      'EVANGELISM': 2,
-      'RECRUITING': 3,
+      'ACCOMPLISHMENT': 0,
+      'MENTORSHIP': 0,
+      'EVANGELISM': 0,
+      'RECRUITING': 0,
       'COMMUNITY': 0
     },
     focusedTrackId: 'MOBILE'
@@ -155,9 +155,9 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             text-decoration: none;
           }
         `}</style>
-        <div style={{margin: '19px auto 0', width: 142}}>
-          <a href="https://medium.com/" target="_blank">
-            <Wordmark />
+        <div style={{margin: '20px auto 0', width: 200, fontSize: '30px', textAlign: 'center', display: 'flex', flex: 1}}>
+          <a href="https://medium.com/kaodim-engineering" target="_blank">
+            Kaodim Engineering 
           </a>
         </div>
         <div style={{display: 'flex'}}>
@@ -200,9 +200,9 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
         <div style={{display: 'flex', paddingBottom: '20px'}}>
           <div style={{flex: 1}}>
-            Made with ❤️ by <a href="https://medium.engineering" target="_blank">Medium Eng</a>.
-            Learn about the <a href="https://medium.com/s/engineering-growth-framework" target="_blank">growth framework</a>.
-            Get the <a href="https://github.com/Medium/snowflake" target="_blank">source code</a>.
+            Adapted from the <a href="https://medium.engineering" target="_blank">Medium Engineering </a>
+            <a href="https://medium.com/s/engineering-growth-framework" target="_blank">Growth Framework</a>.
+            Forked from <a href="https://github.com/Medium/snowflake" target="_blank">snowflake repo</a>.
             Read the <a href="https://medium.com/p/85e078bc15b7" target="_blank">terms of service</a>.
           </div>
         </div>
