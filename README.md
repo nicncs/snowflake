@@ -37,4 +37,7 @@ This will put a static version of the site in `out/`.
 
 ### Future Work
 
+* Add a reset to reset scores to 0, but keep name
+* Add a link to copy URL to save name
+* Save and retrieve individual states
 
