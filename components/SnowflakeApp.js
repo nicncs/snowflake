@@ -40,7 +40,6 @@ const coerceMilestone = (value: number): Milestone => {
     case 2: return 2
     case 3: return 3
     case 4: return 4
-    case 5: return 5
     default: return 0
   }
 }
@@ -50,50 +49,51 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'MOBILE': 0,
-      'WEB_CLIENT': 0,
       'FOUNDATIONS': 0,
-      'SERVERS': 0,
-      'PROJECT_MANAGEMENT': 0,
-      'COMMUNICATION': 0,
-      'CRAFT': 0,
+      'WEB_CLIENT': 0,
+      'MOBILE': 0,
+      'BACKEND': 0,
+      'INFRA_DEVOPS': 0,
+      'QUALITY_ASSURANCE': 0,
+      'DATA_ENGINEERING': 0,
+      'DELIVERY': 0,
       'INITIATIVE': 0,
-      'CAREER_DEVELOPMENT': 0,
-      'ORG_DESIGN': 0,
-      'WELLBEING': 0,
-      'ACCOMPLISHMENT': 0,
+      'EXCELLENCE': 0,
       'MENTORSHIP': 0,
-      'EVANGELISM': 0,
       'RECRUITING': 0,
-      'COMMUNITY': 0
+      'CAREER_DEVELOPMENT': 0,
+      'EVANGELISM': 0,
+      'COMMUNICATION': 0,
+      'ORG_DESIGN': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'FOUNDATIONS'
   }
 }
 
+//Default state when app first loads without parameters 
 const defaultState = (): SnowflakeAppState => {
   return {
     name: '{Your Name Here}',
-    title: 'Staff Engineer',
+    title: 'SDE I',
     milestoneByTrack: {
-      'MOBILE': 0,
-      'WEB_CLIENT': 0,
       'FOUNDATIONS': 0,
-      'SERVERS': 0,
-      'PROJECT_MANAGEMENT': 0,
-      'COMMUNICATION': 0,
-      'CRAFT': 0,
+      'WEB_CLIENT': 0,
+      'MOBILE': 0,
+      'BACKEND': 0,
+      'INFRA_DEVOPS': 0,
+      'QUALITY_ASSURANCE': 0,
+      'DATA_ENGINEERING': 0,
+      'DELIVERY': 0,
       'INITIATIVE': 0,
-      'CAREER_DEVELOPMENT': 0,
-      'ORG_DESIGN': 0,
-      'WELLBEING': 0,
-      'ACCOMPLISHMENT': 0,
+      'EXCELLENCE': 0,
       'MENTORSHIP': 0,
-      'EVANGELISM': 0,
       'RECRUITING': 0,
-      'COMMUNITY': 0
+      'CAREER_DEVELOPMENT': 0,
+      'EVANGELISM': 0,
+      'COMMUNICATION': 0,
+      'ORG_DESIGN': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'FOUNDATIONS'
   }
 }
 
@@ -237,7 +237,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
     let prevMilestone = this.state.milestoneByTrack[this.state.focusedTrackId]
     let milestone = prevMilestone + delta
     if (milestone < 0) milestone = 0
-    if (milestone > 5) milestone = 5
+    if (milestone > 4) milestone = 4
     this.handleTrackMilestoneChange(this.state.focusedTrackId, milestone)
   }
 

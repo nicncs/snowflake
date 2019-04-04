@@ -23,6 +23,15 @@ class TrackSelector extends React.Component<Props> {
             margin-bottom: 20px;
             margin-left: -3px;
           }
+          .category-row {
+            line-height: 30px;
+            width: 50px;
+            text-align: center;
+            background: #eee;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+          }
           .track-selector-value {
             line-height: 50px;
             width: 50px;
@@ -35,7 +44,7 @@ class TrackSelector extends React.Component<Props> {
           }
           .track-selector-label {
             text-align: center;
-            font-size: 9px;
+            font-size: 9.5px;
           }
         `}</style>
         <tbody>
@@ -54,6 +63,20 @@ class TrackSelector extends React.Component<Props> {
                 {this.props.milestoneByTrack[trackId]}
               </td>
             ))}
+          </tr>
+          <tr>
+            <td className="category-row" colSpan="7" style={{background: categoryColorScale(1)}}>
+            Technical Competencies
+            </td>
+            <td className="category-row" colSpan="3" style={{background: categoryColorScale(2)}}>
+            Responsibility/Complexity
+            </td>
+            <td className="category-row" colSpan="3" style={{background: categoryColorScale(3)}}>
+            Leadership
+            </td>
+            <td className="category-row" colSpan="4" style={{background: categoryColorScale(4)}}>
+            Area of Influence
+            </td>
           </tr>
         </tbody>
       </table>

@@ -1,4 +1,8 @@
-# Snowflake
+# Kaodim Engineering Growth Chart
+
+Forked out of Medium's Snowflake tool for their growth framework. 
+
+## Snowflake
 
 Snowflake is Medium's tool for planning and supporting our engineers' career development. You can read more
 about how we use this tool in our [growth framework documentation](https://medium.com/s/engineering-growth-framework).
@@ -31,7 +35,6 @@ Install dependencies:
 
 This will put a static version of the site in `out/`.
 
-## Future work
+### Future Work
 
-* Load initial data from a file, to improve flexibility.
-* Add restricted job title selection and validation.
+
