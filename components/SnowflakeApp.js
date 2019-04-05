@@ -204,6 +204,9 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             <a href="https://medium.com/s/engineering-growth-framework" target="_blank">Growth Framework</a>.
             Forked from <a href="https://github.com/Medium/snowflake" target="_blank">snowflake repo</a>.
             Read the <a href="https://medium.com/p/85e078bc15b7" target="_blank">terms of service</a>.
+            <div style={{margin: '20px auto 0', width: 100, fontSize: '15px', textAlign: 'center', display: 'flex'}}>
+            <a href="https://github.com/nicncs/snowflake" target="blank">Version 1.0</a>
+            </div>
           </div>
         </div>
       </main>

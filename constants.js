@@ -40,32 +40,31 @@ export const milestoneToPoints = (milestone: Milestone): number => {
     case 0: return 0
     case 1: return 1
     case 2: return 3
-    case 3: return 6
-    case 4: return 10
-    case 5: return 15
+    case 3: return 7
+    case 4: return 13
     default: return 0
   }
 }
 
 export const pointsToLevels = {
   '0': '1.1',
-  '5': '1.2',
-  '10': '1.3',
-  '15': '1.4',
-  '20': '1.5',
-  '25': '2.1',
-  '30': '2.2',
-  '35': '2.3',
-  '40': '2.4',
-  '45': '2.5',
-  '50': '3.1',
-  '55': '3.2',
-  '60': '3.3',
-  '65': '3.4',
-  '70': '4.1',
+  '14': '1.2',
+  '26': '1.3',
+  '37': '1.4',
+  '48': '2.1',
+  '61': '2.2',
+  '74': '2.3',
+  '87': '2.4',
+  '100': '3.1',
+  '117': '3.2',
+  '134': '3.3',
+  '151': '3.4',
+  '168': '4.1',
+  '188': '4.2',
+  '208': '4.3',
 }
 
-export const maxLevel = 70
+export const maxLevel = 208
 
 export type Track = {
   displayName: string,
