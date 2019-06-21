@@ -65,17 +65,17 @@ class TrackSelector extends React.Component<Props> {
             ))}
           </tr>
           <tr>
-            <td className="category-row" colSpan="7" style={{background: categoryColorScale(1)}}>
-            Technical Competencies
+            <td className="category-row" colSpan="6" style={{background: categoryColorScale(1)}}>
+            TECHNICAL COMPETENCIES
             </td>
             <td className="category-row" colSpan="3" style={{background: categoryColorScale(2)}}>
-            Responsibility/Complexity
+            RESPONSIBILITY & COMPLEXITY
             </td>
             <td className="category-row" colSpan="3" style={{background: categoryColorScale(3)}}>
-            Leadership
+            LEADERSHIP
             </td>
-            <td className="category-row" colSpan="4" style={{background: categoryColorScale(4)}}>
-            Area of Influence
+            <td className="category-row" colSpan="2" style={{background: categoryColorScale(4)}}>
+            INFLUENCE
             </td>
           </tr>
         </tbody>

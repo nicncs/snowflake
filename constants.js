@@ -4,10 +4,9 @@ import * as d3 from 'd3'
 
 // List of Tracks for all areas. Not split into areas
 export type TrackId = 'FOUNDATIONS' | 'WEB_CLIENT' | 'MOBILE' | 'BACKEND' |
-  'INFRA_DEVOPS' | 'QUALITY_ASSURANCE' | 'DATA_ENGINEERING' |
-  'DELIVERY' | 'INITIATIVE' | 'EXCELLENCE' |
+  'INFRA_DEVOPS' | 'QUALITY_ASSURANCE' | 'DELIVERY' | 'INITIATIVE' | 'EXCELLENCE' |
   'MENTORSHIP' | 'RECRUITING' | 'CAREER_DEVELOPMENT' | 
-  'EVANGELISM' | 'COMMUNICATION' | 'ORG_DESIGN'
+  'EVANGELISM' | 'COMMUNICATION'
 
 // How many milestones for each track
 export type Milestone = 0 | 1 | 2 | 3 | 4
@@ -19,7 +18,6 @@ export type MilestoneMap = {
   'BACKEND': Milestone,
   'INFRA_DEVOPS': Milestone,
   'QUALITY_ASSURANCE': Milestone,
-  'DATA_ENGINEERING': Milestone,
   'DELIVERY': Milestone,
   'INITIATIVE': Milestone,
   'EXCELLENCE': Milestone,
@@ -27,8 +25,7 @@ export type MilestoneMap = {
   'RECRUITING': Milestone,
   'CAREER_DEVELOPMENT': Milestone,
   'EVANGELISM': Milestone,
-  'COMMUNICATION': Milestone,
-  'ORG_DESIGN': Milestone
+  'COMMUNICATION': Milestone
 }
 export const milestones = [0, 1, 2, 3, 4]
 
@@ -40,31 +37,30 @@ export const milestoneToPoints = (milestone: Milestone): number => {
     case 0: return 0
     case 1: return 1
     case 2: return 3
-    case 3: return 7
-    case 4: return 13
+    case 3: return 6
+    case 4: return 12
     default: return 0
   }
 }
 
 export const pointsToLevels = {
   '0': '1.1',
-  '14': '1.2',
-  '26': '1.3',
-  '37': '1.4',
-  '48': '2.1',
-  '61': '2.2',
-  '74': '2.3',
-  '87': '2.4',
-  '100': '3.1',
-  '117': '3.2',
-  '134': '3.3',
-  '151': '3.4',
-  '168': '4.1',
-  '188': '4.2',
-  '208': '4.3',
+  '5': '1.2',
+  '11': '1.3',
+  '17': '2.1',
+  '23': '2.2',
+  '29': '2.3',
+  '36': '3.1',
+  '43': '3.2',
+  '50': '3.3',
+  '58': '4.1',
+  '66': '4.2',
+  '74': '4.3',
+  '90': '5.1',
+  '110': '5.2',
 }
 
-export const maxLevel = 208
+export const maxLevel = 110
 
 export type Track = {
   displayName: string,
@@ -84,7 +80,6 @@ type Tracks = {|
   'BACKEND': Track,
   'INFRA_DEVOPS': Track,
   'QUALITY_ASSURANCE': Track,
-  'DATA_ENGINEERING': Track,
   'DELIVERY': Track,
   'INITIATIVE': Track,
   'EXCELLENCE': Track,
@@ -92,13 +87,14 @@ type Tracks = {|
   'RECRUITING': Track,
   'CAREER_DEVELOPMENT': Track,
   'EVANGELISM': Track,
-  'COMMUNICATION': Track,
-  'ORG_DESIGN': Track
+  'COMMUNICATION': Track
 |}
 
 export const tracks: Tracks = {
 
 // Category A - Technical Competencies //
+
+//1. FOUNDATIONS
   "FOUNDATIONS": {
     "displayName": "Foundations",
     "category": "A",
@@ -136,7 +132,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Designed Ansible configuration management",
-        "Built Medium's realtime stats pipeline",
+        "Built Setel's realtime stats pipeline",
         "Designed flexible framework for writing machine learning jobs",
       ],
     }, {
@@ -160,12 +156,13 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
+        "Defined and developed Setel's continuous delivery strategy",
         "Developed and implemented HA strategy",
       ],
     }],
   },
 
+  //2. WEB_CLIENT
   "WEB_CLIENT": {
     "displayName": "Web Client",
     "category": "A",
@@ -202,8 +199,8 @@ export const tracks: Tracks = {
         "Acts a caretaker for all of web client code",
       ],
       "examples": [
-        "Designed font loading strategy for Medium",
-        "Researched utility of service workers for Medium",
+        "Designed font loading strategy for Setel",
+        "Researched utility of service workers for Setel",
         "Designed and implemented ResponseScreen",
       ],
     }, {
@@ -214,8 +211,8 @@ export const tracks: Tracks = {
         "Makes architectural decisions that eliminate entire classes of bugs",
       ],
       "examples": [
-        "Designed Medium's post morpher and delta system",
-        "Implemented Medium's scrolling text over image blur",
+        "Designed Setel's post morpher and delta system",
+        "Implemented Setel's scrolling text over image blur",
         "Designed and pioneered proto-based model storage",
       ],
     }, {
@@ -233,6 +230,7 @@ export const tracks: Tracks = {
     }],
   },
 
+  //3. MOBILE
   "MOBILE": {
     "displayName": "Mobile",
     "category": "A",
@@ -300,6 +298,7 @@ export const tracks: Tracks = {
     }],
   },
 
+  //4. BACKEND
   "BACKEND": {
     "displayName": "Backend",
     "category": "A",
@@ -336,7 +335,7 @@ export const tracks: Tracks = {
         "Writes playbooks for new service maintenance",
       ],
       "examples": [
-        "Implemented Google Auth login to Medium",
+        "Implemented Google Auth login to Setel",
         "Implemented payments integration with Stripe",
         "Built Textshots server",
       ],
@@ -348,7 +347,7 @@ export const tracks: Tracks = {
         "Makes appropriate buy vs build choices",
       ],
       "examples": [
-        "Designed Medium's ranked feed architecture",
+        "Designed Setel's ranked feed architecture",
         "Designed custom domains architecture",
         "Created Gotham framework for creating Go services",
       ],
@@ -360,13 +359,14 @@ export const tracks: Tracks = {
         "Identifies and solves systemic problems with current architecture",
       ],
       "examples": [
-        "Researched, vetted, and selected Go as Medium's statically typed language",
-        "Defined microservices architecture and medium2 migration plan",
+        "Researched, vetted, and selected Go as Setel's statically typed language",
+        "Defined microservices architecture migration plan",
         "Defined and implemented proprietary IP core to the company's success",
       ],
     }],
   },
 
+  //5. INFRA_DEVOPS
   "INFRA_DEVOPS": {
     "displayName": "Infra & DevOps",
     "category": "A",
@@ -434,6 +434,7 @@ export const tracks: Tracks = {
     }],
   }, 
   
+  //6. QA
   "QUALITY_ASSURANCE": {
     "displayName": "Quality Assurance",
     "category": "A",
@@ -483,7 +484,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Added code coverage reporting to iOS CI pipeline",
-        "Iterated repeatedly to develop Medium's underlines solution",
+        "Iterated repeatedly to develop Setel's underlines solution",
         "Defined and oversaw plan for closing Heartbleed vulnerability",
       ],
     }, {
@@ -501,75 +502,10 @@ export const tracks: Tracks = {
     }],
   },
 
-  "DATA_ENGINEERING": {
-    "displayName": "Data Engineering",
-    "category": "A",
-    "description": "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
-    "milestones": [{
-      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution",
-      "signals": [
-        "Notices when someone is stuck and reaches out",
-        "Helps others break down problems into feasible, tangible next steps",
-        "Talks through problems non-judgmentally",
-      ],
-      "examples": [
-        "Completed training on diagnosing problems",
-        "Unblocked a group member",
-        "Reinforces and affirms positive feedback for good work",
-      ],
-    }, {
-      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill",
-      "signals": [
-        "Gathers context outside the immediate problem",
-        "Recognizes issues within local environment and suggests change",
-        "Works to encourage ownership of actions and responsibilities",
-      ],
-      "examples": [
-        "Completed training on decision making",
-        "Convinced a group member to solve a problem directly, rather than doing it for them",
-        "Gave honest feedback about poor performance, with compassion",
-      ],
-    }, {
-      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans",
-      "signals": [
-        "Aggregates signals of poor performance and creates process for improvement",
-        "Investigates motivation and externalities for consistent poor performance",
-        "Puts together comprehensive, achievable performance plans",
-      ],
-      "examples": [
-        "Worked with group member to address persistent communication failures",
-        "Arranged a transfer to another team, resulting in improved performance",
-        "Managed group member closely to maximise chances of PIP success",
-      ],
-    }, {
-      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict",
-      "signals": [
-        "Recognizes heightened situations and toxic or aggressive interactions",
-        "Inserts themself into conflict where appropriate to calm and mediate",
-        "Encourages open dialog and builds trust between parties in conflict",
-      ],
-      "examples": [
-        "Empowered a team to drive forward amidst uncertainty",
-        "Protected team from externalities so they could focus on goals",
-        "Mediated sit-down between team members to address tension",
-      ],
-    }, {
-      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels",
-      "signals": [
-        "Takes control of dysfunctional teams to organise chaos",
-        "Repairs broken team dynamics and builds harmony",
-        "Presides over a well-oiled team of teams",
-      ],
-      "examples": [
-        "Turned around the performance of a problematic team",
-        "De-escalated serious tensions between teams",
-        "Rebuilt trust between senior team leads",
-      ],
-    }],
-  },
 
 // Category B - Responsibility & Scope of Complexity //
 
+  //1. DELIVERY
   "DELIVERY": {
     "displayName": "Delivery",
     "category": "B",
@@ -637,6 +573,7 @@ export const tracks: Tracks = {
     }],
   },
 
+  //2. INITIATIVE
   "INITIATIVE": {
     "displayName": "Initiative",
     "category": "B",
@@ -687,7 +624,7 @@ export const tracks: Tracks = {
       "examples": [
         "Created the interviewing rubric and booklet",
         "Implemented and secured support for native login",
-        "Migrated medium2 to mono repo and bazel",
+        "Migrated system to mono repo and bazel",
       ],
     }, {
       "summary": "Effects change that has a substantial positive impact on the whole company",
@@ -698,81 +635,83 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Migrated the organization from Holacracy",
-        "Built Medium Android prototype and convinced execs to fund it",
-        "Convinced leadership and engineering org to move to Medium Lite architecture",
+        "Built Setel Android prototype and convinced execs to fund it",
+        "Convinced leadership and engineering org to move to Setel Lite architecture",
       ],
     }],
   },
 
+  //3. EXCELLENCE
   "EXCELLENCE": {
     "displayName": "Excellence",
     "category": "B",
-    "description": "Builds community internally, gives of themself to the team, and champions and extols company values",
+    "description": "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
     "milestones": [{
-      "summary": "Is available and present on current teams, and works to contribute positively to company culture",
+      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution",
       "signals": [
-        "Participates in team activities and offsites",
-        "Treats colleagues and clients with respect",
-        "Joins groups or committees outside regular duties",
+        "Notices when someone is stuck and reaches out",
+        "Helps others break down problems into feasible, tangible next steps",
+        "Talks through problems non-judgmentally",
       ],
       "examples": [
-        "Joined and actively participated in the web client guild",
-        "Brought a small gift back from vacation for the team",
-        "Wrote entertaining and informative Prod Ops writeups on Hatch",
+        "Completed training on diagnosing problems",
+        "Unblocked a group member",
+        "Reinforces and affirms positive feedback for good work",
       ],
     }, {
-      "summary": "Steps up, builds connectedness, and takes concrete actions to promote an inclusive culture",
+      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill",
       "signals": [
-        "Makes space for others to participate",
-        "Collaborates with other engineers outside direct responsibilities",
-        "Finds ways to ramp up and engage new hires quickly",
+        "Gathers context outside the immediate problem",
+        "Recognizes issues within local environment and suggests change",
+        "Works to encourage ownership of actions and responsibilities",
       ],
       "examples": [
-        "Created onboarding bingo",
-        "Brought shy and introverted people into a dominant conversation",
-        "Volunteered as secretary for a team",
+        "Completed training on decision making",
+        "Convinced a group member to solve a problem directly, rather than doing it for them",
+        "Gave honest feedback about poor performance, with compassion",
       ],
     }, {
-      "summary": "Contributes to improving team relatedness, and helps build a culture of lending support",
+      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans",
       "signals": [
-        "Takes on additional Watch shifts at short notice",
-        "Pitches in to help other teams hit deadlines, without missing own deadlines",
-        "Uses position to raise difficult issues on someone's behalf",
+        "Aggregates signals of poor performance and creates process for improvement",
+        "Investigates motivation and externalities for consistent poor performance",
+        "Puts together comprehensive, achievable performance plans",
       ],
       "examples": [
-        "Lead Watch cycles with little support while still contributing to projects",
-        "Started and drove the LGBTQIA ERG",
-        "Stayed positive and improved team morale during period after layoffs",
+        "Worked with group member to address persistent communication failures",
+        "Arranged a transfer to another team, resulting in improved performance",
+        "Managed group member closely to maximise chances of PIP success",
       ],
     }, {
-      "summary": "Exemplifies selflessness for the team without compromising responsibilities, and lifts everyone up",
+      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict",
       "signals": [
-        "Goes above and beyond on the Watch, serving the team without complaint",
-        "Implements concrete programs to signficantly improve team inclusivity",
-        "Takes on large amounts of tedious grunt work for the team without being asked",
+        "Recognizes heightened situations and toxic or aggressive interactions",
+        "Inserts themself into conflict where appropriate to calm and mediate",
+        "Encourages open dialog and builds trust between parties in conflict",
       ],
       "examples": [
-        "Devoted large amount of time to helping outside direct responsibilities",
-        "Refactored hundreds of legacy Shepherd nodes",
-        "Acted as sole maintainer of Boxen for years",
+        "Empowered a team to drive forward amidst uncertainty",
+        "Protected team from externalities so they could focus on goals",
+        "Mediated sit-down between team members to address tension",
       ],
     }, {
-      "summary": "Lives the company values, guards positive culture, and defines policies that support relatedness between teams",
+      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels",
       "signals": [
-        "Brings separate teams together to build relatedness",
-        "Holds individuals, teams, and leadership accountable to Medium's values",
-        "Sets the tone, policy, and goals around maintaining an inclusive company",
+        "Takes control of dysfunctional teams to organise chaos",
+        "Repairs broken team dynamics and builds harmony",
+        "Presides over a well-oiled team of teams",
       ],
       "examples": [
-        "Organized wine and olive tasting offsite to Napa for the whole engineering org",
-        "Devised, delivered and acted on findings from an engineer happiness survey",
-        "Challenged and corrected exclusionary behaviour or policies",
+        "Turned around the performance of a problematic team",
+        "De-escalated serious tensions between teams",
+        "Rebuilt trust between senior team leads",
       ],
     }],
   },
 
 // Category C - Leadership //
 
+  //1. MENTORSHIP
   "MENTORSHIP": {
   "displayName": "Mentorship",
   "category": "C",
@@ -802,7 +741,7 @@ export const tracks: Tracks = {
       "Lead from behind to support someone new to a leadership role",
     ],
   }, {
-    "summary": "Teaches small groups of engineers and contributes to Medium's shared knowledge base",
+    "summary": "Teaches small groups of engineers and contributes to Setel's shared knowledge base",
     "signals": [
       "Avoids siloing information when it can be usefully shared with others",
       "Works to increase the bus factor of systems",
@@ -811,7 +750,7 @@ export const tracks: Tracks = {
     "examples": [
       "Gave a brown bag presentation on payments",
       "Wrote Hatch post on avoiding RDS backfill issues",
-      "Wrote Medium-U content module",
+      "Wrote Setel-U content module",
     ],
   }, {
     "summary": "Encourages people to mentor each other, and creates ways for them to do so",
@@ -821,7 +760,7 @@ export const tracks: Tracks = {
       "Creates brown bag series and lines up speakers",
     ],
     "examples": [
-      "Created and lead Medium's Women in Eng group",
+      "Created and lead Setel's Women in Eng group",
       "Organized an Eng All Hands with an outside speaker",
       "Designed and taught web client guild curriculum",
     ],
@@ -840,12 +779,13 @@ export const tracks: Tracks = {
   }],
   },
 
+  //2. RECRUITING
   "RECRUITING": {
     "displayName": "Recruiting",
     "category": "C",
-    "description": "Strengthens Medium's team by bringing in excellent staff members",
+    "description": "Strengthens Setel's team by bringing in excellent staff members",
     "milestones": [{
-      "summary": "Brings new candidates into the pipeline and understands how to evaluate candidates at Medium",
+      "summary": "Brings new candidates into the pipeline and understands how to evaluate candidates at Setel",
       "signals": [
         "Reviews existing network for hiring leads regularly",
         "Shadows interviews to gain familiarity with process",
@@ -865,7 +805,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Added observable evidence for every rating",
-        "Started a monthly brunch for candidates to meet Medium employees",
+        "Started a monthly brunch for candidates to meet Setel employees",
         "Tested a new service for quality and diversity of candidates",
       ],
     }, {
@@ -889,7 +829,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Planned engineering summit on interview process and training",
-        "Organized and lead Medium's presence at a recruitment fair",
+        "Organized and lead Setel's presence at a recruitment fair",
         "Started CODE2040 internship program",
       ],
     }, {
@@ -907,6 +847,7 @@ export const tracks: Tracks = {
     }],
   },
 
+  //3. CAREER_DEVELOPMENT
   "CAREER_DEVELOPMENT": {
     "displayName": "Career Development",
     "category": "C",
@@ -977,73 +918,75 @@ export const tracks: Tracks = {
 
 // Category D - Area of Influence //
 
+  //1. EVANGELISM
   "EVANGELISM": {
     "displayName": "Evangelism",
     "category": "D",
-    "description": "Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work",
+    "description": "Promotes Setel to the outside world and establishes it as an attractive and thoughtful place to work",
     "milestones": [{
-      "summary": "Represents Medium well externally, and influences individuals positively",
+      "summary": "Represents Setel well externally, and influences individuals positively",
       "signals": [
         "Shares personal and organizational successes with their network",
-        "Attends Medium-hosted events and talks with guests",
+        "Attends Setel-hosted events and talks with guests",
         "Communicates genuine and honest excitement about their work externally",
       ],
       "examples": [
-        "Shared a Medium product launch post on Facebook",
+        "Shared a Setel product launch post on Facebook",
         "Acted as a guide for a non-friend visitor to the office",
         "Supported PR efforts by giving a quote or having a photo taken",
       ],
     }, {
       "summary": "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
       "signals": [
-        "Takes meaningful action to introduce people to Medium",
-        "Joined public Slack group and represented Medium appropriately, and well",
-        "Organizes positive small- or medium-sized events that bring people to Medium",
+        "Takes meaningful action to introduce people to Setel",
+        "Joined public Slack group and represented Setel appropriately, and well",
+        "Organizes positive small- or medium-sized events that bring people to Setel",
       ],
       "examples": [
         "Volunteered as a helper for CODE2040 writing workshop",
         "Organized a short tour of the office by college students",
-        "Talked at a Women Who Code event hosted at Medium",
+        "Talked at a Women Who Code event hosted at Setel",
       ],
     }, {
-      "summary": "Works hard to positively influence large groups of people on their views of Medium",
+      "summary": "Works hard to positively influence large groups of people on their views of Setel",
       "signals": [
         "Mentors or participates in a high visibility way in an external organization",
         "Builds fruitful partnerships with external organizations",
-        "Writes blog posts about Medium that receive moderate traffic",
+        "Writes blog posts about Setel that receive moderate traffic",
       ],
       "examples": [
-        "Represented Medium on a panel at a conference of industry experts",
+        "Represented Setel on a panel at a conference of industry experts",
         "Established close ties with Creative Commons",
         "Built a durable, long-standing relationship with Code2040",
       ],
     }, {
-      "summary": "Establishes Medium as an great, innovative company and workplace to the whole industry",
+      "summary": "Establishes Setel as an great, innovative company and workplace to the whole industry",
       "signals": [
         "Establishes themself as an industry thought leader who attracts talent",
-        "Publishes material about Medium's organizational or technical innovations",
-        "Leverages significant following to evangelise Medium",
+        "Publishes material about Setel's organizational or technical innovations",
+        "Leverages significant following to evangelise Setel",
       ],
       "examples": [
-        "Published a paper on Medium technology in a peer-reviewed journal",
+        "Published a paper on Setel technology in a peer-reviewed journal",
         "Authored joint-press release with EFF on DNT",
-        "Published “Why Content Editable Is Terrible” on the Medium engineering blog",
+        "Published “Why Content Editable Is Terrible” on the Setel engineering blog",
       ],
     }, {
-      "summary": "Introduces Medium in a positive light to a wider audience outside the industry",
+      "summary": "Introduces Setel in a positive light to a wider audience outside the industry",
       "signals": [
         "Delivers key messages to broad, mainstream audiences",
-        "Influences people with large audiences to talk about Medium positively",
-        "Drives recognition and adoption of Medium in significant numbers",
+        "Influences people with large audiences to talk about Setel positively",
+        "Drives recognition and adoption of Setel in significant numbers",
       ],
       "examples": [
         "Published or interviewed in a mainstream newspaper or website outside tech",
         "Keynoted a conference with international attention",
-        "Represented Medium in national televised media",
+        "Represented Setel in national televised media",
       ],
     }],
   },
 
+  //2. COMMS
   "COMMUNICATION": {
     "displayName": "Communication",
     "category": "D",
@@ -1093,7 +1036,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Lead off-site workshop on interviewing",
-        "Wrote Medium's growth framework and rationale",
+        "Wrote Setel's growth framework and rationale",
         "Aligned the entire organization around claps",
       ],
     }, {
@@ -1107,73 +1050,6 @@ export const tracks: Tracks = {
         "Organized half year check-in company offsite",
         "Created the communication plan for a large organizational change",
         "Presented to the board about key company metrics and projects",
-      ],
-    }],
-  },
-
-  "ORG_DESIGN": {
-    "displayName": "Org Design",
-    "category": "D",
-    "description": "Defines processes and structures that enables the strong growth and execution of a diverse eng organization",
-    "milestones": [{
-      "summary": "Respects and participates in processes, giving meaningful feedback to help the organization improve",
-      "signals": [
-        "Reflects on meetings that leave them inspired or frustrated",
-        "Teaches others about existing processes",
-        "Actively participates and makes contributions within organizational processes",
-      ],
-      "examples": [
-        "Facilitated effective tactical meeting with empathy",
-        "Explained tactical meeting format to a new hire",
-        "Provided feedback on sprint planning meeting",
-      ],
-    }, {
-      "summary": "Identifies opportunities to improve existing processes and makes changes that positively affect the local team",
-      "signals": [
-        "Defines meeting structure and cadence that meets team needs",
-        "Engages in organizational systems thinking",
-        "Advocates for improved diversity and inclusion, and proposes ideas to help",
-      ],
-      "examples": [
-        "Defined Frankenmeeting structure for small team",
-        "Improved Watch on-call rotation scheduling",
-        "Defined standard channels for inter-team communication",
-      ],
-    }, {
-      "summary": "Develops processes to solve ongoing organizational problems",
-      "signals": [
-        "Creates programs that meaningfully improve organizational diversity",
-        "Solves long-standing organizational problems",
-        "Reallocates resources to meet organizational needs",
-      ],
-      "examples": [
-        "Developed baseline team templates for consistency",
-        "Created bug-rotation program to address ongoing quality issues",
-        "Defined Guilds manifesto and charter",
-      ],
-    }, {
-      "summary": "Thinks deeply about organizational issues and identifies hidden dynamics that contribute to them",
-      "signals": [
-        "Evaluates incentive structures and their effect on execution",
-        "Analyzes existing processes for bias and shortfall",
-        "Ties abstract concerns to concrete organizational actions or norms",
-      ],
-      "examples": [
-        "Connected mobile recruiting difficulties to focus on excellence",
-        "Raised leadership level change discrepancies",
-        "Analyzed the hiring rubric for false negative potential",
-      ],
-    }, {
-      "summary": "Leads initiatives to address issues stemming from hidden dynamics and company norms",
-      "signals": [
-        "Builds programs to train leadership in desired skills",
-        "Creates new structures that provide unique growth opportunities",
-        "Leads planning and communication for reorgs",
-      ],
-      "examples": [
-        "Lead efforts to increase number of mobile engineers",
-        "Directed resources to meaningfully improve diversity at all levels",
-        "Built the growth framework rubric",
       ],
     }],
   },
@@ -1213,11 +1089,12 @@ export const categoryColorScale = d3.scaleOrdinal()
 
 // List of titles and corresponding points range to achieve
 export const titles = [
-  {label: 'SDE I', minPoints: 0, maxPoints: 22},
-  {label: 'SDE II', minPoints: 23, maxPoints: 49},
-  {label: 'SDE III', minPoints: 50, maxPoints: 89},
+  {label: 'Engineer I', minPoints: 0, maxPoints: 16},
+  {label: 'Engineer II', minPoints: 17, maxPoints: 35},
+  {label: 'Engineer III (Sr. Eng.)', minPoints: 36, maxPoints: 57},
+  {label: 'Team Lead', minPoints: 58, maxPoints: 89},
   {label: 'Principal Engineer', minPoints: 90},
-  {label: 'Director of Engineering', minPoints: 135}
+  {label: 'Director of Engineering', minPoints: 125}
 ]
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {

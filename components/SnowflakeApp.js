@@ -55,7 +55,6 @@ const emptyState = (): SnowflakeAppState => {
       'BACKEND': 0,
       'INFRA_DEVOPS': 0,
       'QUALITY_ASSURANCE': 0,
-      'DATA_ENGINEERING': 0,
       'DELIVERY': 0,
       'INITIATIVE': 0,
       'EXCELLENCE': 0,
@@ -63,8 +62,7 @@ const emptyState = (): SnowflakeAppState => {
       'RECRUITING': 0,
       'CAREER_DEVELOPMENT': 0,
       'EVANGELISM': 0,
-      'COMMUNICATION': 0,
-      'ORG_DESIGN': 0
+      'COMMUNICATION': 0
     },
     focusedTrackId: 'FOUNDATIONS'
   }
@@ -74,7 +72,7 @@ const emptyState = (): SnowflakeAppState => {
 const defaultState = (): SnowflakeAppState => {
   return {
     name: '{Your Name Here}',
-    title: 'SDE I',
+    title: '',
     milestoneByTrack: {
       'FOUNDATIONS': 0,
       'WEB_CLIENT': 0,
@@ -82,7 +80,6 @@ const defaultState = (): SnowflakeAppState => {
       'BACKEND': 0,
       'INFRA_DEVOPS': 0,
       'QUALITY_ASSURANCE': 0,
-      'DATA_ENGINEERING': 0,
       'DELIVERY': 0,
       'INITIATIVE': 0,
       'EXCELLENCE': 0,
@@ -90,8 +87,7 @@ const defaultState = (): SnowflakeAppState => {
       'RECRUITING': 0,
       'CAREER_DEVELOPMENT': 0,
       'EVANGELISM': 0,
-      'COMMUNICATION': 0,
-      'ORG_DESIGN': 0
+      'COMMUNICATION': 0
     },
     focusedTrackId: 'FOUNDATIONS'
   }
@@ -156,8 +152,8 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           }
         `}</style>
         <div style={{margin: '20px auto 0', width: 200, fontSize: '30px', textAlign: 'center', display: 'flex', flex: 1}}>
-          <a href="https://medium.com/kaodim-engineering" target="_blank">
-            Kaodim Engineering 
+          <a href="https://www.setel.my" target="_blank">
+            SETEL Engineering 
           </a>
         </div>
         <div style={{display: 'flex'}}>

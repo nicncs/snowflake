@@ -1,4 +1,4 @@
-# Kaodim Engineering Growth Chart
+# Engineering Growth Chart
 
 Forked out of Medium's Snowflake tool for their growth framework. 
 
